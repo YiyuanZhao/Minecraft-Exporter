@@ -14,6 +14,11 @@ COPY . .
   
 # 构建应用  
 RUN CGO_ENABLED=0 GOOS=linux go build -buildvcs=false -o minecraft_exporter .  
+
+# 获取 mc-monitor 的可执行文件  
+RUN git clone https://github.com/itzg/mc-monitor.git /mc-monitor && \  
+    cd /mc-monitor && \  
+    go build -buildvcs=false -o mc-monitor .
   
 # 使用一个更小的基础镜像来运行应用  
 FROM coreharbor.azurewaf.top/dockerhub/alpine:latest  
@@ -23,6 +28,7 @@ FROM coreharbor.azurewaf.top/dockerhub/alpine:latest
   
 # 复制构建好的二进制文件到新镜像  
 COPY --from=builder /app/minecraft_exporter /usr/local/bin/  
+COPY --from=builder /mc-monitor/mc-monitor /usr/local/bin/  
   
 # 设置默认的命令  
 ENTRYPOINT ["/usr/local/bin/minecraft_exporter"]  
