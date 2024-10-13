@@ -13,7 +13,7 @@ RUN go mod download
 COPY . .  
   
 # 构建应用  
-RUN CGO_ENABLED=0 GOOS=linux go build -o minecraft_exporter .  
+RUN CGO_ENABLED=0 GOOS=linux go build buildvcs=false -o minecraft_exporter .  
   
 # 使用一个更小的基础镜像来运行应用  
 FROM coreharbor.azurewaf.top/dockerhub/alpine:latest  
