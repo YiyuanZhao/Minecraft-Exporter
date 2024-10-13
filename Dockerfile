@@ -21,10 +21,10 @@ RUN git clone https://github.com/itzg/mc-monitor.git /mc-monitor && \
     go build -buildvcs=false -o mc-monitor .
   
 # 使用一个更小的基础镜像来运行应用  
-FROM scratch
+FROM coreharbor.azurewaf.top/dockerhub/alpine:latest
   
 # 安装必要的包（如需要）  
-# RUN apk --no-cache add ca-certificates  
+RUN apk add --no-cache bash 
   
 # 复制构建好的二进制文件到新镜像  
 COPY --from=builder /app/minecraft_exporter /usr/local/bin/  
