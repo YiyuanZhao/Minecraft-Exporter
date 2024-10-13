@@ -21,7 +21,7 @@ RUN git clone https://github.com/itzg/mc-monitor.git /mc-monitor && \
     go build -buildvcs=false -o mc-monitor .
   
 # 使用一个更小的基础镜像来运行应用  
-FROM coreharbor.azurewaf.top/dockerhub/scratch
+FROM scratch
   
 # 安装必要的包（如需要）  
 # RUN apk --no-cache add ca-certificates  
