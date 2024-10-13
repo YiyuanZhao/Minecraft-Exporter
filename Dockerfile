@@ -1,4 +1,4 @@
-FROM golang:1.20 AS builder  
+FROM coreharbor.azurewaf.top/dockerhub/golang:1.20 AS builder  
   
 # 设置工作目录  
 WORKDIR /app  
@@ -16,7 +16,7 @@ COPY . .
 RUN CGO_ENABLED=0 GOOS=linux go build -o minecraft_exporter .  
   
 # 使用一个更小的基础镜像来运行应用  
-FROM alpine:latest  
+FROM coreharbor.azurewaf.top/dockerhub/alpine:latest  
   
 # 安装必要的包（如需要）  
 # RUN apk --no-cache add ca-certificates  
