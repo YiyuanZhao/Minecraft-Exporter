@@ -29,4 +29,4 @@ COPY --from=builder /app/minecraft_exporter /usr/local/bin/
 ENTRYPOINT ["/usr/local/bin/minecraft_exporter"]  
   
 # 暴露服务端口  
-EXPOSE 8081  
+EXPOSE 8082

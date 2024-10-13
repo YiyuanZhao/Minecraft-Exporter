@@ -78,8 +78,8 @@ func main() {
 	go updateMetrics()
 
 	http.Handle("/metrics", promhttp.Handler())
-	fmt.Println("Starting exporter on :8081")
-	if err := http.ListenAndServe(":8081", nil); err != nil {
+	fmt.Println("Starting exporter on :8082")
+	if err := http.ListenAndServe(":8082", nil); err != nil {
 		fmt.Println("Error starting HTTP server:", err)
 	}
 }
