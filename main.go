@@ -34,8 +34,8 @@ func init() {
 func updateMetrics() {
 	for {
 		// 执行 mc-monitor status 命令
-		// output, err := exec.Command("mc-monitor", "status").Output()
-		output, err := exec.Command("echo", "localhost:25565 : version=1.21.1 online=0 max=20 motd='A Minecraft Server'").Output()
+		output, err := exec.Command("mc-monitor", "status").Output()
+		// output, err := exec.Command("echo", "localhost:25565 : version=1.21.1 online=0 max=20 motd='A Minecraft Server'").Output()
 		if err != nil {
 			fmt.Println("Error executing command:", err)
 			continue
