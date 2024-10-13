@@ -1,4 +1,4 @@
-FROM coreharbor.azurewaf.top/dockerhub/golang:1.20 AS builder  
+FROM coreharbor.azurewaf.top/dockerhub/golang:1.23.2 AS builder  
   
 # 设置工作目录  
 WORKDIR /app  
