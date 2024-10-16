@@ -1,4 +1,4 @@
-FROM coreharbor.azurewaf.top/dockerhub/golang:1.23.2 AS builder  
+FROM golang:1.23.2 AS builder  
   
 #  Set working directory 
 WORKDIR /app  
@@ -17,7 +17,7 @@ RUN CGO_ENABLED=0 GOOS=linux go build -buildvcs=false -o minecraft_exporter .
 
   
 # Use a smaller base image to run the application
-FROM coreharbor.azurewaf.top/dockerhub/itzg/mc-monitor:latest
+FROM itzg/mc-monitor:latest
   
 # Install necessary packages (if needed)  
 # RUN apk add --no-cache bash 
