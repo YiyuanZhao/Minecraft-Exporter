@@ -22,7 +22,7 @@ Minecraft Exporter is a Go application that monitors the status of a Minecraft s
 ### Clone the Repository  
    
 ```bash  
-git clone https://github.com/yourusername/minecraft-exporter.git  
+git clone https://github.com/YiyuanZhao/Minecraft-Exporter.git
 cd minecraft-exporter  
 ```  
    
